@@ -122,6 +122,7 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
+        {/* vérifie si toutes ces trois propriétés existent et ont une valeur */}
         {lastEvent && lastEvent.cover && lastEvent.title ? (
                     <EventCard
                         imageSrc={lastEvent?.cover}
