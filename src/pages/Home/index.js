@@ -120,7 +120,7 @@ const Page = () => {
       </div>
     </main>
     <footer className="row">
-      <div className="col presta">
+      <div className="col presta" data-testid="last-event">
         <h3>Notre derniére prestation</h3>
         {/* vérifie si toutes ces trois propriétés existent et ont une valeur */}
         {lastEvent && lastEvent.cover && lastEvent.title ? (
@@ -140,7 +140,7 @@ const Page = () => {
         <address>45 avenue de la République, 75000 Paris</address>
         <div>01 23 45 67 89</div>
         <div>contact@77events.com</div>
-        <div>
+        <div data-testid="social-media">
           <a href="#twitch">
             <Icon name="twitch" />
           </a>

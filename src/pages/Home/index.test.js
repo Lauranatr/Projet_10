@@ -30,15 +30,31 @@ describe("When Form is created", () => {
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
+    render(<Home />);
+        const eventList = screen.getByTestId("event-list");
+        expect(eventList).toBeDefined();
   })
   it("a list a people is displayed", () => {
-    // to implement
+    render(<Home />);  
+    expect(screen.getByRole('heading', { name: 'Notre équipe' })).toBeInTheDocument();
+
+    expect(screen.getByText("Samira")).toBeInTheDocument();
+    expect(screen.getByText("Jean-baptiste")).toBeInTheDocument();
+  
   })
   it("a footer is displayed", () => {
-    // to implement
+    render(<Home />);  
+    expect(screen.getByText("Contactez-nous")).toBeInTheDocument();
+    expect(screen.getByText("45 avenue de la République, 75000 Paris")).toBeInTheDocument();
+    expect(screen.getByText("01 23 45 67 89")).toBeInTheDocument();
+    expect(screen.getByText("contact@77events.com")).toBeInTheDocument();
+    
+    const socialMedia = screen.getByTestId("social-media");
+    expect(socialMedia).toBeDefined();
   })
   it("an event card, with the last event, is displayed", () => {
-    // to implement
+    render(<Home />); 
+    const lastEvent = screen.getByTestId("last-event");
+    expect(lastEvent).toBeDefined();
   })
 });
