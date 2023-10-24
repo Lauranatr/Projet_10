@@ -8,12 +8,10 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-  // Modification du sens
     new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
   );
   const nextCard = () => {
     if (byDateDesc) {
-// -1  permet de faire défiler les éléments de la liste de manière cyclique
       setTimeout(
         () => setIndex(index < byDateDesc.length -1 ? index + 1 : 0),
         5000

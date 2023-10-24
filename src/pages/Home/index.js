@@ -14,8 +14,6 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const { data } = useData();
-// Si la date de `evtA` est plus récente que la date de `evtB`, retourne -1 (pour trier en ordre décroissant),
-// sinon retourne 1 (pour trier en ordre croissant).
   const sortedEvents = data?.events?.sort((evtA, evtB) => new Date(evtA.date) > new Date(evtB.date) ? -1 : 1);
   const lastEvent = sortedEvents?.[0];
 
@@ -122,7 +120,6 @@ const Page = () => {
     <footer className="row">
       <div className="col presta" data-testid="last-event">
         <h3>Notre derniére prestation</h3>
-        {/* vérifie si toutes ces trois propriétés existent et ont une valeur */}
         {lastEvent && lastEvent.cover && lastEvent.title ? (
                     <EventCard
                         imageSrc={lastEvent?.cover}
